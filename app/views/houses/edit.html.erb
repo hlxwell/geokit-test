@@ -1,0 +1,50 @@
+<% content_for :header do %> 
+    <%= GMap.header %>
+    <%= @map.to_html %>
+<% end %>
+
+<div id="header">
+  Housing Map
+</div>
+<div id="body">
+  <div id="left">
+    <%= @map.div(:width => 600, :height => 450) %>
+  </div>
+  <div id="right">    
+    <h1>Editing house</h1>
+    
+    <%= error_messages_for :house %>
+    
+    <% form_for(@house) do |f| %>
+        <p>
+          <b>Title</b><br />
+          <%= f.text_field :title %>
+        </p>
+    
+        <p>
+          <b>Icon</b><br />
+          <%= f.text_field :icon %>
+        </p>
+    
+        <p>
+          <b>Lng</b><br />
+          <%= f.text_field :lng %>
+        </p>
+    
+        <p>
+          <b>Lat</b><br />
+          <%= f.text_field :lat %>
+        </p>
+    
+        <p>
+          <%= f.submit "Update" %>
+        </p>
+    <% end %>
+    
+    <%= link_to 'Show', @house %> |
+    <%= link_to 'Back', houses_path %>
+  </div>
+</div>
+<div id="footer">
+  Powered by hlxwell. Copy Right reserved.
+</div>

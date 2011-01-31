@@ -1,0 +1,46 @@
+<% content_for :header do %> 
+
+  <%= GMap.header %>
+  <%=javascript_include_tag 'dragzoom','distance','draw_circle','my_map_control' %>
+  <%= @map.to_html %>
+<% end %>
+
+<div id="header">
+        Housing Map
+</div>
+<div id="body">
+        <div id="left">
+                <%= @map.div(:width => 600, :height => 450) %>
+        </div>
+        <div id="right">
+                <h1>Listing houses</h1>
+                <table>
+                        <tr>
+                                <th></th>
+                                <th>Title</th>
+                                <th>Icon</th>
+                        </tr>
+                        <% for house in @houses %>
+                          <tr>
+                                  <td><%=link_to_remote 'go',:url=>{:action=>:pan_to,:id=>house.id,:lng=>house.lng,:lat=> house.lat} %></td>
+                                  <td><%=h house.title %></td>
+                                  <td><%=h house.icon %></td>
+                                  <td><%= link_to 'Show', house %></td>
+                                  <td><%= link_to 'Edit', edit_house_path(house) %></td>
+                                  <td><%= link_to 'Destroy', house, :confirm => 'Are you sure?', :method => :delete %></td>
+                          </tr>
+                        <% end %>
+                </table>
+                <br>
+                <table id ="featuretable">
+                        <tbody id="featuretbody"></tbody>
+                </table>
+
+                <br />
+                <%= link_to 'New house', new_house_path %>
+                <%= link_to_remote 'Clear Markers',:url=>clear_markers_houses_path %>
+        </div>
+</div>
+<div id="footer">
+        Powered by hlxwell. Copy Right reserved.
+</div>

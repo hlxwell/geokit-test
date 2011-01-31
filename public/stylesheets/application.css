@@ -1,0 +1,35 @@
+#header{
+    float: left;
+    width: 98%;
+    border: solid 1px #cccccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+#body {
+    float: left;
+    width: 100%;
+}
+
+#left {
+    float: left;
+    width: 60%;    
+}
+
+#right{
+    float: right;
+    width: 36%;
+    border: solid 1px #cccccc;
+    padding: 10px;
+}
+
+#footer{
+    float: left;
+    width: 98%;
+    border: solid 1px #cccccc;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}

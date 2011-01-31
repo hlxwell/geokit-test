@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @house.title %>
+</p>
+
+<p>
+  <b>Icon:</b>
+  <%=h @house.type %>
+</p>
+
+<p>
+  <b>Lng:</b>
+  <%=h @house.lng %>
+</p>
+
+<p>
+  <b>Lat:</b>
+  <%=h @house.lat %>
+</p>
+
+
+<%= link_to 'Edit', edit_house_path(@house) %> |
+<%= link_to 'Back', houses_path %>
